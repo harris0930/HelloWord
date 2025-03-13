@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCT Deep Link 測試</title>
+</head>
+<body>
+<h1>Chrome Custom Tabs Deep Link 測試</h1>
+<p>點擊按鈕來觸發 Deep Link，返回 App。</p>
+
+<button onclick="redirectToApp()">跳回 App</button>
+
+<script>
+    function redirectToApp() {
+        // 這裡的 myapp://callback 是你的 App 設定的 Deep Link
+        window.location.href = "myapp://callback?action=button_clicked";
+    }
+</script>
+</body>
+</html>
