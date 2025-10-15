@@ -7,15 +7,16 @@
 </head>
 <body>
 <h1>Chrome Custom Tabs Deep Link 測試</h1>
-<p>點擊按鈕來觸發 Deep Link，返回 App。</p>
-
-<button onclick="redirectToApp()">跳回 App</button>
+<p>頁面載入後 1 秒會自動跳回 App。</p>
 
 <script>
-    function redirectToApp() {
-        // 這裡的 myapp://callback 是你的 App 設定的 Deep Link
-        window.location.href = "myapp://callback?action=button_clicked";
-    }
+    // 頁面載入後自動延遲 1 秒跳回 App
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            // 替換成你的 App Deep Link
+            window.location.href = "myapp://callback?action=button_clicked";
+        }, 1000); // 1000 毫秒 = 1 秒
+    });
 </script>
 </body>
 </html>
